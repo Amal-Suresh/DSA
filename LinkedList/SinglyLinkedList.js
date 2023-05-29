@@ -32,6 +32,8 @@ class LinkedList{
 
     display(){
         let currentNode = this.head
+        // console.log(this.tail.data);
+
         while(currentNode){
             console.log(currentNode.data);
             currentNode = currentNode.next
@@ -72,32 +74,57 @@ class LinkedList{
                 if(!currentNode.next){
                     this.tail = currentNode
                 }
+                
+            }if(!currentNode.next){
                 return
             }
             currentNode = currentNode.next
+            
         }
+        return
 
     }
 
+    reverse(){
+        let nextNode = null
+        let currentNode = this.head
+        let previousNode = null
+        while(currentNode!=null){
+            nextNode = currentNode.next
+            currentNode.next = previousNode
+            previousNode = currentNode
+            currentNode = nextNode
+        }
 
-    
-
-
+        this.tail = this.head
+        this.head = previousNode
+    }
 }
 
 
 const list = new LinkedList
 list.add(10)
 list.add(20)
+list.add(90)
 list.add(30)
+list.add(90)
 list.add(40)
 list.add(50)
+list.add(90)
+
+
 list.insertAfter(40,111)
 list.display()
 list.remove(90)
 
-//adding array of elements to linked list
-let array=[1,2,3,4,5]
-for(let i=0;i<array.length;i++){
-    list.add(array[i])
-}
+// //adding array of elements to linked list
+// let array=[1,2,3,4,5]
+// for(let i=0;i<array.length;i++){
+//     list.add(array[i])
+// }
+
+list.reverse()
+
+console.log(".......................");
+
+list.display()
