@@ -30,9 +30,7 @@ class LinkedList{
             return list1
         }
         console.log(list1,list2);
-    
-        let currentNode = list1.head
-        
+        let currentNode = list1.head 
         while(currentNode){
             if(currentNode.next==null){
                 currentNode.next =list2.head
@@ -42,12 +40,8 @@ class LinkedList{
             
             currentNode=currentNode.next
         }
-    
-    
-    
     }
     
-
     display(){
         let currentNode = this.head
         while(currentNode){
@@ -57,8 +51,6 @@ class LinkedList{
     }
 
 }
-
-
 
 const list1 = new LinkedList
 const list2 = new LinkedList
