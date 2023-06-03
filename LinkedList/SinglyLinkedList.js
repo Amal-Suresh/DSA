@@ -66,6 +66,7 @@ class LinkedList{
         }
         if(this.head.data==data){
             this.head=this.head.next
+            return
         }
         let currentNode = this.head
         while(currentNode.next){
@@ -73,16 +74,13 @@ class LinkedList{
                 currentNode.next=currentNode.next.next;
                 if(!currentNode.next){
                     this.tail = currentNode
-                }
-                
+                }  
             }if(!currentNode.next){
                 return
             }
-            currentNode = currentNode.next
-            
+            currentNode = currentNode.next    
         }
         return
-
     }
 
     reverse(){
