@@ -12,6 +12,7 @@ class LinkedList{
     constructor(){
         this.head = null
         this.tail = null
+        this.size=0
     }
 
 // add element to linked list
@@ -19,13 +20,12 @@ class LinkedList{
     add (data){
         const node = new Node(data)
         if(!this.head){
-            this.head = node;
-            this.tail = node;
-            return 
+            this.head = node; 
         }else{
             this.tail.next = node;
-            this.tail = node
         }
+        this.tail = node;
+        this.size++
     }
 
 //display all elements
@@ -83,6 +83,25 @@ class LinkedList{
         return
     }
 
+    findMidAndInsert(data){
+        const node=new Node(data)
+        console.log(this.size);
+        let mid =Math.floor(this.size/2)
+        let count =0
+
+        let currentNode = this.head
+        while(currentNode){
+            if(count==mid){
+                node.next = currentNode.next
+                currentNode.next = node
+            }
+            count++
+            currentNode=currentNode.next
+        }
+    }
+
+   
+
     reverse(){
         let nextNode = null
         let currentNode = this.head
@@ -108,12 +127,6 @@ list.add(30)
 list.add(90)
 list.add(40)
 list.add(50)
-list.add(90)
-
-
-list.insertAfter(40,111)
-list.display()
-list.remove(90)
 
 // //adding array of elements to linked list
 // let array=[1,2,3,4,5]
@@ -121,8 +134,15 @@ list.remove(90)
 //     list.add(array[i])
 // }
 
-list.reverse()
 
-console.log(".......................");
 
 list.display()
+console.log(".......................");
+
+
+list.findMidAndInsert(111111)
+console.log(".......................");
+list.display()
+
+
+
