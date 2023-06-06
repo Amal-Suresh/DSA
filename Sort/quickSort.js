@@ -1,8 +1,8 @@
 
-function partition(a, l, r) {
+function partition(a, l, h) {
     let pivot = a[l];
     let i = l + 1;
-    let j = r;
+    let j = h;
   
     while (i <= j) {
       while (a[i] < pivot) {
@@ -27,19 +27,19 @@ function partition(a, l, r) {
     return j;
   }
   
-  function quicksort(a, l, r) {
-    if (l < r) {
-      let p = partition(a, l, r);
+  function quicksort(a, l, h) {
+    if (l < h) {
+      let p = partition(a, l, h);
       quicksort(a, l, p - 1);
-      quicksort(a, p + 1, r);
+      quicksort(a, p + 1, h);
     }
     return a;
   }
   
   const array = [5, 2, 7, 4, 9, 3, 6, 12];
   let l = 0;
-  let r = array.length - 1;
+  let h = array.length - 1;
   
-  const sortedArray = quicksort(array, l, r);
+  const sortedArray = quicksort(array, l, h);
   console.log(sortedArray);
 

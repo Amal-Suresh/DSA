@@ -1,5 +1,5 @@
 let a=[1,10,3,7,8,30,50,9]
-function insrtionSort(a){
+function insertionSort(a){
     let limit=a.length
     for(let i=1;i<limit;i++){
         let temp=a[i]
