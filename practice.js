@@ -16,11 +16,11 @@
 // // // // // //         if (!this.head) {
 // // // // // //             this.head = node
 // // // // // //             this.tail = node
-           
+
 // // // // // //         } else {
 // // // // // //             this.tail.next = node;
 // // // // // //             this.tail = node;
-          
+
 // // // // // //         }
 // // // // // //     }
 
@@ -114,10 +114,10 @@
 // // // // // //         const node = new Node(data)
 // // // // // //         if(!this.head){
 // // // // // //             this.head = node
-           
+
 // // // // // //         }else{
 // // // // // //             this.tail.next =node
-            
+
 // // // // // //         }
 // // // // // //         this.tail =node
 // // // // // //         this.size++
@@ -268,7 +268,7 @@
 // // // // // // let a =10
 // // // // // // let i=0
 // // // // // // function printTen(a,i){
-  
+
 // // // // // //   if(i<=a){
 // // // // // //     console.log(i);
 // // // // // //     i++
@@ -381,11 +381,11 @@
 
 // // // // //         let currentNode=this.head
 // // // // //         while (currentNode.next) {
-                
+
 // // // // //         }
 // // // // //     }
 
-    
+
 
 // // // // //     sum(){
 // // // // //         let sum=0
@@ -396,7 +396,7 @@
 // // // // //         }
 
 // // // // //             return sum
-    
+
 
 // // // // //     }
 
@@ -491,7 +491,7 @@
 // // // //             currentNode = nextNode
 
 // // // //         }
-        
+
 // // // //         this.tail =this.head
 // // // //         this.head=previousNode
 // // // //     }
@@ -1016,7 +1016,7 @@
 // // // //     let j=mid+1
 // // // //     let k=lb
 // // // //     const b=[]
-    
+
 // // // //     while(i<=mid&&j<=ub){
 // // // //         if(a[i]<=a[j]){
 // // // //             b[k]=a[i]
@@ -1067,7 +1067,7 @@
 // // //     mergeSort(a,mid+1,ub)
 // // //     merge(a,lb,ub,mid)
 // // //     }
-    
+
 // // // }
 
 // // // function merge(a,lb,ub,mid){
@@ -1146,7 +1146,7 @@
 // //     for(let z=lb;z<=ub;z++){
 // //         a[z]=b[z]
 // //     }
-    
+
 // // }
 // // console.log(a);
 
@@ -1284,7 +1284,7 @@
 //     quicksort(a,p+1,h)
 //     }
 //     return a
-    
+
 // }
 
 //------------------------quickSort
@@ -1314,7 +1314,7 @@
 // //             j--
 // //         }
 // //     }
-    
+
 // //     let temp = a[l]
 // //      a[l]=a[j]
 // //     a[j]= temp
@@ -1434,7 +1434,7 @@
 //             a[i]=a[j]
 //             a[j]=temp
 //         }
-        
+
 //     }
 //     temp=a[l]
 //     a[l]=a[j]
@@ -1827,7 +1827,7 @@
 //         a[j+1]=temp
 //     }
 //     return a
-    
+
 // }
 // let result = insertion(a)
 // console.log(result);
@@ -2039,7 +2039,7 @@
 //     a[j]=temp
 
 //     return j
-    
+
 // }
 
 // function quicksort(a,low,high){
@@ -2072,4 +2072,395 @@
 // console.log(bubblesort(a));
 
 //bubble sort
-let a=[]
+// let a=[2,90,11,3,5,9]
+// let lb=0
+// let ub=a.length-1
+// let sortedArray = mergesort(a,lb,ub)
+// console.log(sortedArray);
+
+// function mergesort(a,lb,ub){
+//     if(lb,ub){
+//         let mid=Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+
+// }
+
+// let a=[12,4,3,5,9,1]
+// let lb=0
+// let ub =a.length-1
+// mergesort(a,lb,ub)
+// console.log(a);
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid = Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let k=lb
+//     let b=[]
+//     let j=mid+1
+
+//    while(i<=mid && j<=ub){
+//     if(a[i]<=a[j]){
+//         b[k]=a[i]
+//         i++
+//     }else{
+//         b[k]=a[j]
+//         j++
+//     }
+//     k++
+//    }
+//    while(i<=mid){
+//     b[k]=a[i]
+//     i++
+//     k++
+//    }
+//    while(j<=ub){
+//     b[k]=a[j]
+//     j++
+//     k++
+//    }
+//    for(let m=lb;m<=ub;m++){
+//     a[m]=b[m]
+//    }
+// }
+
+// merge sort
+
+
+// let a=[12,2,5,7,9,0]
+// let ub=a.length-1
+// let lb= 0
+// mergesort(a,lb,ub)
+// console.log(a);
+
+
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let k=lb
+//     let b=[]
+//     let j=mid+1
+
+//     while(i<=mid && j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let o=lb;o<=ub;o++){
+//         a[o]=b[o]
+//     }
+// }
+
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid=Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+//merge sort
+
+// let a=[1,2,6,90,5,0]
+// let lb=0
+// let ub=a.length-1
+// mergesort(a,lb,ub)
+// console.log(a);
+
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid = Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+
+
+
+// function merge(a,lb,ub,mid){
+//     let j=mid+1
+//     let i=lb
+//     let k=lb
+//     let b=[]
+
+//     while(i<=mid && j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let r=lb; r<=ub;r++){
+//         a[r]=b[r]
+//     }
+// }
+//merge sort
+
+//  let a=[12,2,0,9,5,6,3]
+//  let lb=0
+//  let ub=a.length-1
+//  mergesort(a,lb,ub)
+// console.log(a);
+
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid = Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let j=mid+1
+//     let k=lb
+//     let b=[]
+
+
+//     while(i<=mid && j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let x=lb;x<=ub;x++){
+//         a[x]=b[x]
+//     }
+
+// }
+
+
+// quick  sort
+
+// let a=[12,2,6,7,90,0]
+// let l=0
+// let h=a.length-1
+
+// let sortedArray= quicksort(a,l,h)
+// console.log(sortedArray);
+
+
+// function partition(a,l,h){
+//     let i=l+1
+//     let pivot =a[l]
+//     let j=h
+
+//     while(i<=j){
+//         while(a[i]<pivot){
+//             i++
+//         }
+//         while(a[j]>pivot){
+//             j--
+//         }
+
+//         if(i<=j){
+//            let temp = a[i]
+//            a[i]=a[j]
+//            a[j]=temp
+//            i++
+//            j--
+//         }
+//     }
+
+//     let temp =a[l]
+//     a[l]=a[j]
+//     a[j]=temp
+//     return j
+// }
+
+// function quicksort(a,l,h){
+//     if(l<h){
+//         let p = partition(a,l,h)
+//         quicksort(a,l,p-1)
+//         quicksort(a,p+1,h)
+//     }
+//     return a
+// }
+
+//stack 
+
+// class Node {
+//     constructor(data){
+//         this.data =data
+//         this.next=null
+//     }
+// }
+
+// class Stack{
+//     constructor(){
+//         this.top =null
+//         this.size=0
+//     }
+//     push(data){
+//         const newNode = new Node(data)
+//         if(!this.top){
+//             this.top=newNode
+//         }else{
+//             newNode.next = this.top 
+//         }
+//         this.top= newNode
+//         this.size++
+//     }
+//     display(){
+//         console.log("stack size = ",this.size);
+
+//         let currentNode = this.top
+//         while(currentNode!=null){
+//             console.log(currentNode.data);
+//             currentNode=currentNode.next
+//         }
+//     } 
+
+//     pop(){
+//         this.top=this.top.next
+//     }
+
+//     peek(){
+//         return this.top.data
+//     }
+// }
+
+// const stack = new Stack
+
+// stack.push(12)
+// stack.push(80)
+// stack.push(70)
+// stack.push(60)
+
+// stack.display()
+// console.log("last stack element =", stack.peek());
+
+
+//stack
+
+class Node {
+    constructor(data) {
+        this.data = data
+        this.next = null
+    }
+}
+class Stack {
+    constructor() {
+        this.top = null
+        this.size = 0
+    }
+
+    push(data) {
+        const newNode = new Node(data)
+        if (!this.top) {
+            this.top = newNode
+        } else {
+            newNode.next = this.top
+
+        }
+        this.top = newNode
+        this.size++
+    }
+
+    pop() {
+        let currentNode = this.top
+        if (currentNode != null) {
+            this.top = this.top.next
+        }
+    }
+
+    display() {
+        let currentNode = this.top
+        while (currentNode) {
+            console.log(currentNode.data);
+            currentNode = currentNode.next
+        }
+
+    }
+
+    isEmpty() {
+        return this.size
+    }
+
+    removemiddle() {
+        let mid = Math.floor((this.size) / 2)
+        const tempStack = new Stack
+        let i = 1
+        let currentNode=this.top
+        while(currentNode){
+            if(i==mid-1){ 
+                currentNode.next =currentNode.next.next
+                i++
+            }
+            currentNode =currentNode.next
+        }
+
+    }
+}
+
+const stack = new Stack
+
+stack.push(90)
+stack.push(80)
+stack.push(70)
+stack.push(69)
+// stack.pop()
+// stack.pop()
+
+stack.display()
+console.log("---------------------------------");
+stack.removemiddle()
+stack.display()
