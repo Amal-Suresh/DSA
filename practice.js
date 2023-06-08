@@ -2391,76 +2391,514 @@
 
 //stack
 
-class Node {
-    constructor(data) {
-        this.data = data
-        this.next = null
-    }
-}
-class Stack {
-    constructor() {
-        this.top = null
-        this.size = 0
-    }
+// class Node {
+//     constructor(data) {
+//         this.data = data
+//         this.next = null
+//     }
+// }
+// class Stack {
+//     constructor() {
+//         this.top = null
+//         this.size = 0
+//     }
 
-    push(data) {
-        const newNode = new Node(data)
-        if (!this.top) {
-            this.top = newNode
-        } else {
-            newNode.next = this.top
+//     push(data) {
+//         const newNode = new Node(data)
+//         if (!this.top) {
+//             this.top = newNode
+//         } else {
+//             newNode.next = this.top
 
-        }
-        this.top = newNode
-        this.size++
-    }
+//         }
+//         this.top = newNode
+//         this.size++
+//     }
 
-    pop() {
-        let currentNode = this.top
-        if (currentNode != null) {
-            this.top = this.top.next
-        }
-    }
+//     pop() {
+//         let currentNode = this.top
+//         if (currentNode != null) {
+//             this.top = this.top.next
+//         }
+//     }
 
-    display() {
-        let currentNode = this.top
-        while (currentNode) {
-            console.log(currentNode.data);
-            currentNode = currentNode.next
-        }
+//     display() {
+//         let currentNode = this.top
+//         while (currentNode) {
+//             console.log(currentNode.data);
+//             currentNode = currentNode.next
+//         }
 
-    }
+//     }
 
-    isEmpty() {
-        return this.size
-    }
+//     isEmpty() {
+//         return this.size
+//     }
 
-    removemiddle() {
-        let mid = Math.floor((this.size) / 2)
-        const tempStack = new Stack
-        let i = 1
-        let currentNode=this.top
-        while(currentNode){
-            if(i==mid-1){ 
-                currentNode.next =currentNode.next.next
-                i++
-            }
-            currentNode =currentNode.next
-        }
+//     removemiddle() {
+//         let mid = Math.floor((this.size) / 2)
+//         const tempStack = new Stack
+//         let i = 1
+//         let currentNode=this.top
+//         while(currentNode){
+//             if(i==mid-1){ 
+//                 currentNode.next =currentNode.next.next
+//                 i++
+//             }
+//             currentNode =currentNode.next
+//         }
 
-    }
-}
+//     }
+// }
 
-const stack = new Stack
+// const stack = new Stack
 
-stack.push(90)
-stack.push(80)
-stack.push(70)
-stack.push(69)
-// stack.pop()
-// stack.pop()
+// stack.push(90)
+// stack.push(80)
+// stack.push(70)
+// stack.push(69)
+// // stack.pop()
+// // stack.pop()
 
-stack.display()
-console.log("---------------------------------");
-stack.removemiddle()
-stack.display()
+// stack.display()
+// console.log("---------------------------------");
+// stack.removemiddle()
+// stack.display()
+ //merge sort
+
+//  let a=[12,2,5,6,9,0]
+//  let lb=0
+//  let ub=a.length-1
+//  mergesort(a,lb,ub)
+//  console.log(a);
+
+//  function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid = Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+//  }
+
+//  function merge(a,lb,ub,mid){
+//     let i=lb
+//     let k=lb
+//     let b=[]
+//     let j=mid+1
+
+
+//     while(i<=mid&& j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+//     for(let x=lb;x<=ub;x++){
+//         a[x]=b[x]
+//     }
+//  }
+
+// let a=[12,33,2,7,9,0]
+// let l=0
+// let h=a.length-1
+// let sortedArray=quicksort(a,l,h)
+// console.log(sortedArray);
+
+// function quicksort (a,l,h){
+//     if(l<h){
+//         let p = partition(a,l,h)
+//         quicksort(a,l,p-1)
+//         quicksort(a,p+1,h)
+//     }
+//     return a
+// }
+
+// function partition (a,l,h){
+//     let pivot =a[l]
+//     let i=l+1
+//     let j=h
+
+//     while(i<=j){
+//         while(a[i]<pivot){
+//             i++
+//         }
+//         while(a[j]>pivot){
+//             j--
+//         }
+//         if(i<=j){
+//             let temp =a[i]
+//             a[i]=a[j]
+//             a[j]=temp
+//             i++
+//             j--
+//         }
+//     }
+//     let temp =a[l]
+//     a[l]=a[j]
+//     a[j]=temp
+
+//     return j
+// }
+
+// bubble sort
+
+// let a=[12,2,0,9,10,8]
+// function bubblesort(a){
+//     let limit= a.length
+
+//     for(let i=0;i<limit;i++){
+//         for(let j=0;j<limit-1-i;j++){
+//             if(a[j]>a[j+1]){
+//                 let temp =a[j]
+//                 a[j]=a[j+1]
+//                 a[j+1]=temp
+//             }
+//         }
+//     }
+//     return a
+// }
+// console.log(bubblesort(a));
+
+// bubble sort
+
+// let a= [12,22,2,6,0,8]
+// function bubblesort(a){
+//     let limit = a.length
+//     for(let i=0;i<limit;i++){
+//         for(let j=0;j<limit-1-i;j++){
+//             if(a[j]>a[j+1]){
+//                 let temp = a[j]
+//                 a[j]=a[j+1]
+//                 a[j+1]=temp
+
+//             }
+//         }
+//     }
+//     return a
+// }
+
+// console.log(bubblesort(a));
+
+// let a=[12,6,4,0,9]
+// function bubblesort(a){
+//     let limit =a.length
+//     for(let i=0;i<limit;i++){
+//         for(let j =0;j<limit-1-i;j++){
+//             if(a[j]>a[j+1]){
+//                 let temp =a[j]
+//                 a[j]=a[j+1]
+//                 a[j+1]=temp
+//             }
+//         }
+//     }
+//     return a
+// }
+
+// console.log(bubblesort(a));
+
+// insertion sort
+// let a=[12,9,2,5,1,0]
+// function insertionsort(a){
+//     let limit= a.length
+//     for(let i=0;i<limit;i++){
+//        let temp =a[i] 
+//        let j=i-1
+//        while(j>=0 && a[j]>temp){
+//         a[j+1]=a[j]
+//         j--
+//        }
+//        a[j+1]=temp
+//     }
+// }
+
+// insertionsort(a)
+// console.log(a);
+
+//insertion sort
+// let a=[12,3,0,9,4,6]
+// function insertionsort(a){
+//     let limit = a.length
+//     for(let i=0;i<limit;i++){
+//         let temp=a[i]
+//         let j=i-1
+//         while(j>=0 && a[j]>temp){
+//             a[j+1]=a[j]
+//             j--
+//         }
+//         a[j+1]=temp
+//     }
+
+// }
+// insertionsort(a)
+// console.log(a);
+
+// insertion sort
+
+// let a=[12,4,5,9,0,1]
+// function insertionsort(a){
+//     let limit = a.length
+//     for(let i=0;i<limit;i++){
+//         let temp =a[i]
+//         let j=i-1
+//         while(j>=0 && a[j]>temp){
+//             a[j+1]=a[j]
+//             j--
+//         }
+//         a[j+1] =temp
+//     }
+// }
+// insertionsort(a)
+// console.log(a);
+
+// selection sort
+
+// let a=[21,4,5,7,8,0]
+// function selectionsort(a){
+//     let limit =a.length
+//     for(let i=0;i<limit;i++){
+//         let min =i
+//         for(let j=i+1;j<limit;j++){
+//             if(a[j]<a[min]){
+//                 min=j
+//             }
+//         }
+//         if(min!=i){
+//             let temp =a[i]
+//             a[i]=a[min]
+//             a[min]=temp
+//         }
+//     }
+// }
+// selectionsort(a)
+// console.log(a);
+
+ // selection sort
+
+//  let a=[23,7,8,9,12,1,0]
+//  function selectionsort(a){
+//     let limit=a.length
+//     for(let i=0;i<limit;i++){
+//         let min =i
+//         for(let j=i+1;j<limit;j++){
+//             if(a[j]<a[min]){
+//                 min=j
+//             }
+//         }
+//         if(min!=i){
+//             let temp =a[i]
+//             a[i]=a[min]
+//             a[min]=temp
+//         }
+//     }
+//  }
+//  selectionsort(a)
+//  console.log(a);
+
+// //selection sort
+// let a=[12,3,4,8,90,0]
+// function selectionsort(a){
+//     let limit =a.length
+//     for(let i=0;i<limit;i++){
+//         let min=i
+//         for(let j =i+1;j<limit;j++){
+//             if(a[j]<a[min]){
+//                 min =j
+//             }
+//         }
+//         if(min!=1){
+//             let temp =a[i]
+//         a[i]=a[min]
+//         a[min]=temp
+//         }
+//     }
+// }
+// selectionsort(a)
+// console.log(a);
+
+//selection sort
+
+// let a=[12,3,4,60,9,0]
+// function selectionsort(a){
+//     let limit =a.length
+//     for(let i=0;i<limit;i++){
+//         let  min =i
+//         for(let j=i+1;j<limit;j++){
+//             if(a[j]<a[min]){
+//                 min =j
+//             }
+//         }
+//         if(min!=i){
+//             let temp =a[i]
+//             a[i]=a[min]
+//             a[min]=temp
+//         }
+//     }
+// }
+// selectionsort(a)
+// console.log(a);
+
+// // merge sort
+// let a=[12,2,5,9,0]
+// let lb=0
+// let ub =a.length-1
+
+// mergesort(a,lb,ub)
+// console.log(a);
+
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid=Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let j=mid+1
+//     let b=[]
+//     let k=lb
+
+//     while(i<=mid && j<=ub){
+//        if(a[i]<=a[j]){
+//         b[k]=a[i]
+//         i++
+//        }else{
+//         b[k]=a[j]
+//         j++
+//        }
+//        k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let x=lb;x<=ub;x++){
+//         a[x]=b[x]
+//     }
+    
+// }
+
+// merge sort
+
+// let a=[12,2,3,5,6,0]
+// let lb =0
+// let ub =a.length-1
+// mergesort(a,lb,ub)
+// console.log(a);
+
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid = Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+//     }
+// }
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let j=mid+1
+//     let k=lb
+//     let b=[]
+
+//     while(i<=mid && j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let x=lb;x<=ub;x++){
+//         a[x]=b[x]
+//     }
+// }
+
+// merge sort
+
+// let a=[12,2,50,9,0]
+// let lb =0
+// let ub =a.length-1
+// mergesort(a,lb,ub)
+// console.log(a);
+// function mergesort(a,lb,ub){
+//     if(lb<ub){
+//         let mid =Math.floor((lb+ub)/2)
+//         mergesort(a,lb,mid)
+//         mergesort(a,mid+1,ub)
+//         merge(a,lb,ub,mid)
+
+//     }
+// }
+
+// function merge(a,lb,ub,mid){
+//     let i=lb
+//     let j=mid+1
+//     let k=lb
+//     let b=[]
+
+//     while(i<=mid && j<=ub){
+//         if(a[i]<=a[j]){
+//             b[k]=a[i]
+//             i++
+//         }else{
+//             b[k]=a[j]
+//             j++
+//         }
+//         k++
+//     }
+
+//     while(i<=mid){
+//         b[k]=a[i]
+//         i++
+//         k++
+//     }
+//     while(j<=ub){
+//         b[k]=a[j]
+//         j++
+//         k++
+//     }
+
+//     for(let x=lb; x<=ub;x++){
+//         a[x]=b[x]
+//     }
+// }
