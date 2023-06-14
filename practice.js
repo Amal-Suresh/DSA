@@ -3846,6 +3846,13 @@ class BinerySearchTree{
             return this.min(root.left)
         }
     }
+    max(root){
+        if(!root.right){
+            return root.data
+        }else{
+            return this.max(root.right)
+        }
+    }
 
 
 }
@@ -3862,3 +3869,5 @@ bst.preOrder()
 console.log("-------------------------------");
 bst.postOrder()
 console.log(bst.min(bst.root),"is minimum value");
+
+console.log(bst.max(bst.root),"is the maximum value");

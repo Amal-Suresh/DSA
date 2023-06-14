@@ -95,6 +95,15 @@ class BinerySearchTree {
         }
     }
 
+    max(root){
+        if(!root.right){
+            return root.data
+        }else{
+            return this.max(root.right)
+        }
+    }
+
+
 }
 
 const bst = new BinerySearchTree
@@ -112,6 +121,8 @@ console.log("-----------------------------");
 
  console.log( bst.contains(0));
  console.log(bst.min(bst.root),"is minimum value");
+ console.log(bst.max(bst.root),"is the maximum value");
+
 
 
 
