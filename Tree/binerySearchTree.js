@@ -74,19 +74,25 @@ class BinerySearchTree {
             console.log(node.data);
         }
     }
+
+
+
     contains(data){
         let currentNode=this.root
         while(currentNode!=null){
-            if(data<currentNode.data){
+            if(currentNode.data==data){
+                return true;
+            }
+            else if(data<currentNode.data){
                 currentNode=currentNode.left
-            }else if(data>currentNode.data){
-                currentNode=currentNode.right
             }else{
-                return true
+                currentNode=currentNode.right
             }
         }
-        return false
+        return false;
     }
+
+
     min(root){
         if(!root.left){
             return root.data
@@ -100,6 +106,21 @@ class BinerySearchTree {
             return root.data
         }else{
             return this.max(root.right)
+        }
+    }
+
+    PrintLeafs(root){
+        if(!root){
+            return 
+        }
+        if(root.left==null && root.right==null){
+            console.log(root.data);
+        }
+        if(root.left!==null){
+            this.PrintLeafs(root.left)
+        }
+        if(root.right!==null){
+            this.PrintLeafs(root.right)
         }
     }
 
@@ -117,11 +138,16 @@ console.log("-----------------------------");
 bst.preOrder()
 
 console.log("-----------------------------");
- bst.postOrder()
+bst.postOrder()
 
- console.log( bst.contains(0));
- console.log(bst.min(bst.root),"is minimum value");
- console.log(bst.max(bst.root),"is the maximum value");
+console.log( bst.contains(0));
+console.log(bst.min(bst.root),"is minimum value");
+console.log(bst.max(bst.root),"is the maximum value");
+
+console.log("-----------------------------");
+console.log( bst.contains(90));
+bst.PrintLeafs(bst.root)
+
 
 
 

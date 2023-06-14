@@ -2464,7 +2464,7 @@
 // console.log("---------------------------------");
 // stack.removemiddle()
 // stack.display()
- //merge sort
+//merge sort
 
 //  let a=[12,2,5,6,9,0]
 //  let lb=0
@@ -2687,7 +2687,7 @@
 // selectionsort(a)
 // console.log(a);
 
- // selection sort
+// selection sort
 
 //  let a=[23,7,8,9,12,1,0]
 //  function selectionsort(a){
@@ -2801,7 +2801,7 @@
 //     for(let x=lb;x<=ub;x++){
 //         a[x]=b[x]
 //     }
-    
+
 // }
 
 // merge sort
@@ -2989,7 +2989,7 @@
 //             i++
 //             j--
 //         }
-       
+
 //     }
 //     let temp=a[l]
 //     a[l]=a[j]
@@ -3089,7 +3089,7 @@
 
 // console.log(insertionsort(a));
 
- // selection sort
+// selection sort
 // let a=[12,22,7,0,1]
 // function selectionsort(a){
 //     let limit=a.length
@@ -3401,7 +3401,7 @@
 //             currentNode=currentNode.next
 //         }
 //     }
-    
+
 // }
 
 // const stack = new Stack
@@ -3436,7 +3436,7 @@
 //             this.rear.next =newData
 //         }
 //         this.rear=newData
-        
+
 //     }
 
 //     dequeue(){
@@ -3764,39 +3764,39 @@
 
 //bst 
 
-class Node{
-    constructor(data){
-        this.data =data
-        this.left =null
-        this.right =null
+class Node {
+    constructor(data) {
+        this.data = data
+        this.left = null
+        this.right = null
     }
 }
 
-class BinerySearchTree{
-    constructor(){
+class BinerySearchTree {
+    constructor() {
 
-        this.root =null
+        this.root = null
     }
 
-    insert(data){
-        const newNode =new Node(data)
-        let currentNode =this.root
-        if(!currentNode){
+    insert(data) {
+        const newNode = new Node(data)
+        let currentNode = this.root
+        if (!currentNode) {
             this.root = newNode
-        }else{
-            while(true){
-                if(data<currentNode.data){
-                    if(currentNode.left==null){
-                        currentNode.left=newNode
+        } else {
+            while (true) {
+                if (data < currentNode.data) {
+                    if (currentNode.left == null) {
+                        currentNode.left = newNode
                         break
-                    }else{
-                        currentNode =currentNode.left
+                    } else {
+                        currentNode = currentNode.left
                     }
-                }else{
-                    if(currentNode.right == null){
-                        currentNode.right =newNode
+                } else {
+                    if (currentNode.right == null) {
+                        currentNode.right = newNode
                         break
-                    }else{
+                    } else {
                         currentNode = currentNode.right
                     }
                 }
@@ -3804,61 +3804,92 @@ class BinerySearchTree{
         }
     }
 
-    inOrder(){
+    inOrder() {
         this.inOrderHelper(this.root)
     }
 
-    inOrderHelper(node){
-        if(node){
+    inOrderHelper(node) {
+        if (node) {
             this.inOrderHelper(node.left)
             console.log(node.data);
             this.inOrderHelper(node.right)
 
         }
     }
-    preOrder(){
+    preOrder() {
         this.preOrderHelper(this.root)
     }
-    preOrderHelper(root){
-        if(root){
+    preOrderHelper(root) {
+        if (root) {
             console.log(root.data);
             this.inOrderHelper(root.left)
             this.inOrderHelper(root.right)
         }
     }
 
-    postOrder(){
+    postOrder() {
         this.postOrderHelper(this.root)
     }
 
-    postOrderHelper(root){
-        if(root){
+    postOrderHelper(root) {
+        if (root) {
             this.postOrderHelper(root.left)
             this.postOrderHelper(root.right)
             console.log(root.data);
         }
     }
 
-    min(root){
-        if(!root.left){
+    min(root) {
+        if (!root.left) {
             return root.data
-        }else{
+        } else {
             return this.min(root.left)
         }
     }
-    max(root){
-        if(!root.right){
+    max(root) {
+        if (!root.right) {
             return root.data
-        }else{
+        } else {
             return this.max(root.right)
+        }
+    }
+
+    contains(data) {
+        let currentNode = this.root
+        console.log(currentNode);
+        while (currentNode != null) {
+            if (currentNode.data == data) {
+                return true
+            } else if (data < currentNode.data) {
+                currentNode = currentNode.left
+            } else {
+                currentNode = currentNode.right
+            }
+        }
+        return false
+
+    }
+
+    PrintLeafs(root){
+        if(!root){
+            return 
+        }
+        if(root.left==null && root.right==null){
+            console.log(root.data);
+        }
+        if(root.left!==null){
+            this.PrintLeafs(root.left)
+        }
+        if(root.right!==null){
+            this.PrintLeafs(root.right)
         }
     }
 
 
 }
 
-const bst =new BinerySearchTree
-bst.insert(90)
+const bst = new BinerySearchTree
+bst.insert(50)
 bst.insert(80)
 bst.insert(87)
 bst.insert(45)
@@ -3868,6 +3899,12 @@ console.log("-------------------------------");
 bst.preOrder()
 console.log("-------------------------------");
 bst.postOrder()
-console.log(bst.min(bst.root),"is minimum value");
+console.log(bst.min(bst.root), "is minimum value");
 
-console.log(bst.max(bst.root),"is the maximum value");
+console.log(bst.max(bst.root), "is the maximum value");
+
+console.log(bst.contains(90));
+console.log(bst.contains(1));
+bst.PrintLeafs(bst.root)
+
+
