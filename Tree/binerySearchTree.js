@@ -74,6 +74,26 @@ class BinerySearchTree {
             console.log(node.data);
         }
     }
+    contains(data){
+        let currentNode=this.root
+        while(currentNode!=null){
+            if(data<currentNode.data){
+                currentNode=currentNode.left
+            }else if(data>currentNode.data){
+                currentNode=currentNode.right
+            }else{
+                return true
+            }
+        }
+        return false
+    }
+    min(root){
+        if(!root.left){
+            return root.data
+        }else{
+            return this.min(root.left)
+        }
+    }
 
 }
 
@@ -90,3 +110,10 @@ bst.preOrder()
 console.log("-----------------------------");
  bst.postOrder()
 
+ console.log( bst.contains(0));
+ console.log(bst.min(bst.root),"is minimum value");
+
+
+
+
+    
