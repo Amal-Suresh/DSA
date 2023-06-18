@@ -26,6 +26,7 @@ class Trie{
     insertSubstring(index,str){ 
         let node=this.root; 
         for(let i=index;i<str.length;i++){ 
+       
             const letter=str.charAt(i); 
             if(!node.children.has(letter)){ 
                 node.children.set(letter,new TrieNode()) 
@@ -51,4 +52,5 @@ class Trie{
  
  
 const tr=new Trie("tree"); 
-console.log(tr.contains("e"))
+console.log(tr.contains("tre"))
+console.log(tr.contains("tree"))

@@ -77,51 +77,70 @@ class BinerySearchTree {
 
 
 
-    contains(data){
-        let currentNode=this.root
-        while(currentNode!=null){
-            if(currentNode.data==data){
+    contains(data) {
+        let currentNode = this.root
+        while (currentNode != null) {
+            if (currentNode.data == data) {
                 return true;
             }
-            else if(data<currentNode.data){
-                currentNode=currentNode.left
-            }else{
-                currentNode=currentNode.right
+            else if (data < currentNode.data) {
+                currentNode = currentNode.left
+            } else {
+                currentNode = currentNode.right
             }
         }
         return false;
     }
 
 
-    min(root){
-        if(!root.left){
+    min(root) {
+        if (!root.left) {
             return root.data
-        }else{
+        } else {
             return this.min(root.left)
         }
     }
 
-    max(root){
-        if(!root.right){
+    max(root) {
+        if (!root.right) {
             return root.data
-        }else{
+        } else {
             return this.max(root.right)
         }
     }
 
-    PrintLeafs(root){
-        if(!root){
-            return 
+    PrintLeafs(root) {
+        if (!root) {
+            return
         }
-        if(root.left==null && root.right==null){
+        if (root.left == null && root.right == null) {
             console.log(root.data);
         }
-        if(root.left!==null){
+        if (root.left !== null) {
             this.PrintLeafs(root.left)
         }
-        if(root.right!==null){
+        if (root.right !== null) {
             this.PrintLeafs(root.right)
         }
+    }
+
+    isBST() {
+        return this.isBstHelper(this.root, 0, Infinity);
+    }
+
+    isBstHelper(root, min, max) {
+       
+        if (root == null) {
+            return true;
+        }
+        if (root.data < min || root.data > max) {
+            return false;
+        }
+        return (
+            this.isBstHelper(root.left, min, root.data-1) &&
+            this.isBstHelper(root.right, root.data + 1, max)
+
+        );
     }
 
 
@@ -140,17 +159,16 @@ bst.preOrder()
 console.log("-----------------------------");
 bst.postOrder()
 
-console.log( bst.contains(0));
-console.log(bst.min(bst.root),"is minimum value");
-console.log(bst.max(bst.root),"is the maximum value");
+console.log(bst.contains(0));
+console.log(bst.min(bst.root), "is minimum value");
+console.log(bst.max(bst.root), "is the maximum value");
 
 console.log("-----------------------------");
-console.log( bst.contains(90));
+console.log(bst.contains(90));
 bst.PrintLeafs(bst.root)
 
+console.log(bst.isBST());
 
 
 
 
-
-    
