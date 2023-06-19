@@ -13,15 +13,16 @@ class MinHeap {
     shiftDown(currentIndex) {
       let endIdx = this.heap.length - 1;
       let leftIdx = this.leftChild(currentIndex);
-      while (leftIdx <= endIdx) {
         let rightIdx = this.rightChild(currentIndex);
         let idxToShift;
-        if (rightIdx <= endIdx && this.heap[rightIdx] < this.heap[leftIdx]) {
+        if (rightIdx <= endIdx && this.heap[rightIdx] > this.heap[leftIdx]) {
+        // if (rightIdx <= endIdx && this.heap[rightIdx] < this.heap[leftIdx]) {
           idxToShift = rightIdx;
         } else {
           idxToShift = leftIdx;
         }
-        if (this.heap[currentIndex] > this.heap[idxToShift]) {
+        if (this.heap[currentIndex] < this.heap[idxToShift]) {
+        // if (this.heap[currentIndex] > this.heap[idxToShift]) {
           this.swap(currentIndex, idxToShift);
           currentIndex = idxToShift;
           leftIdx = this.leftChild(currentIndex);
@@ -33,7 +34,8 @@ class MinHeap {
   
     shiftUp(currentIndex) {
       let parentIndex = this.parent(currentIndex);
-      while (currentIndex > 0 && this.heap[parentIndex] > this.heap[currentIndex]) {
+      while (currentIndex > 0 && this.heap[parentIndex] < this.heap[currentIndex]) {
+      // while (currentIndex > 0 && this.heap[parentIndex] > this.heap[currentIndex]) {
         this.swap(currentIndex, parentIndex);
         currentIndex = parentIndex;
         parentIndex = this.parent(currentIndex);
@@ -88,4 +90,5 @@ class MinHeap {
   heap.display();
   console.log('');
   heap.remove();
+  heap.insert(20)
   heap.display();

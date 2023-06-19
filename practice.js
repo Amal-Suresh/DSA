@@ -5558,3 +5558,433 @@
 // console.log("----------------------------------");
 // obj.delete("A")
 // obj.display()
+
+//  class Node{
+//     constructor(data){
+//         this.data=data
+//         this.left = null
+//         this.right = null
+//     }
+//  }
+
+//  class BinerySearchTree{
+//     constructor(){
+//         this.root=null
+//     }
+
+//     insert (data){
+//         const neWdata = new Node(data)
+//         let currentNode = this.root
+
+//         if(!currentNode){
+//             this.root = neWdata
+//         }else{
+//             while(true){
+//                 if(data<currentNode.data){
+//                     if(currentNode.left==null){
+//                         currentNode = neWdata
+//                         break
+//                     }else{
+//                         currentNode = currentNode.left
+//                     }
+//                 }else{
+//                     if(currentNode.right==null){
+//                         currentNode.right = neWdata
+//                         break
+//                     }else{
+//                         currentNode =currentNode.right
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     contains(data){
+//         let currentNode = this.root
+//        while(currentNode){
+//         if(currentNode.data==data){
+//             return true
+//         }else if(data<currentNode.data){
+//             currentNode=currentNode.left
+//         }else{
+//             currentNode=currentNode.right
+//         }
+//        }
+//        return false
+//     }
+//     inOrder(){
+//         this.inOrderHelper(this.root)
+//     }
+
+//     inOrderHelper(node){
+//         if(node){
+//             this.inOrderHelper(node.left)
+//             console.log(node.data);
+//             this.inOrderHelper(node.right)
+
+//         }
+//     }
+//     isBst(){
+//         this.isBstHelper(this.root,0,Infinity)
+//     }
+
+//     isBstHelper(root,min,max){
+//         if(root==null){
+//             return true
+//         }
+//         if(root.data<min && root.data>max){
+//             return false
+//         }
+//         return( 
+//             this.isBstHelper(this.left,min,this.data-1)&&
+//             this.isBstHelper(this.right,root.data+1,max)
+//         )
+//     }
+//  }
+
+//  const bst = new BinerySearchTree()
+//  bst.insert(90)
+//  bst.insert(80)
+//  bst.insert(70)
+//  bst.insert(100)
+//  bst.insert(110)
+//  bst.inOrder()
+
+//heap
+
+// class minHeap{
+//     constructor(){
+//         this.heap=[]
+//     }
+
+//     buildHeap(array){
+//         this.heap=[...array]
+//         for(let i=this.parent(this.heap.lenght-1);i>=0;i--){
+//             this.shiftDown(i)
+
+//         }
+//     }
+
+
+//     shiftDown(currentIndex){
+//         let leftIdx = this.leftChild(currentIndex)
+//         let endIdx = this.heap.length-1
+
+//         while(leftIdx<=endIdx){
+//             let rightIdx = this.rightChild(currentIndex)
+//             let idxToShift 
+//             if(rightIdx<=endIdx && this.heap[rightIdx]<this.heap[currentIndex]){
+//                 idxToShift=rightIdx
+//             }else{
+//                 idxToShift=leftIdx
+//             }
+
+//             if(this.heap[currentIndex]>this.heap[idxToShift]){
+//                 this.swap(currentIndex,idxToShift)
+//                 currentIndex=idxToShift
+//                 leftIdx = this.leftChild (currentIndex)
+//             }else{
+//                 return
+//             }
+//         }
+//     }
+
+//     shiftDown(currentIndex){
+//         let parentIndex= this.parent(currentIndex)
+//         while(currentIndex>0 && this.heap[parentIndex]>this.heap[currentIndex]){
+//             this.swap(currentIndex,parentIndex)
+//             currentIndex = parentIndex
+//             parentIndex=this.parent(currentIndex)
+//         }
+//     }
+//     parent(i){
+//         return Math.floor((i-1)/2)
+//     }
+//     leftChild(i){
+//         return i*2+1
+//     }
+//     rightChild(i){
+//         return i*2+2
+//     }
+// }
+
+// class TrieNode{
+//     constructor(){
+//         this.children= new Map()
+//     }
+// }
+
+// class Trie{
+//     constructor(str){
+//         this.root=new TrieNode()
+//         this.endSymbol="*"
+//         this.populateSuffixTree(str)
+//     }
+
+//     populateSuffixTree(str){
+//         for(let i=0;i<str.lenght;i++)
+//         this.insertSubstring(i,str)
+//     }
+
+//     insertSubstring(index,str){
+//         let node=this.root
+//         for(!node)
+//     }
+// }
+
+// class TrieNode{
+//     constructor(){
+//         this.childern=new Map()
+//     }
+// }
+
+// class Trie{
+//     constructor(str){
+//         this.root=new
+//     }
+// }
+
+// class TrieNode{
+//     constructor(){
+//         this.childern=new Map()
+//     }
+// }
+
+// class Trie{
+//     constructor(str){
+//         this.root=new TrieNode()
+//         this.endSymbol ="*"
+//         this.populateSuffixTrie(str)
+//     }
+
+//     populateSuffixTrie(str){
+//         for(let i=0;i<str.length;i++){
+//             this.insertSubstring(i,str)
+//         }
+//     }
+
+//     insertSubstring(index,str){
+//         let node = this.root
+//         for(let i =index;i<=str.length;i++){
+//             const letter = str.charAt(i)
+//             if(!node.childern.has(letter)){
+//                 node.childern.set(letter,new TrieNode())
+//             }
+//             node = node.childern.get(letter)
+//         }
+//         node.childern.set(this.endSymbol,null)
+//     }
+// }
+
+// class TrieNode{
+//     constructor(){
+//         this.childern=new Map()
+//     }
+// }
+// class Trie{
+//     constructor(){
+//         this.root = new TrieNode()
+//         this.endSymbol="*"
+//         this.populateSuffixTrie(str)
+//     }
+
+//     populateSuffixTrie(str){
+//         for(let i=0;i<str.length;i++){
+//             this.insertSubstring(i,)
+//         }
+//     }
+// }
+
+
+// class TrieNode{
+//     constructor(){
+//         this.children= new Map()
+//     }
+// }
+
+// class Trie{
+//     constructor(str){
+//         this.root=new TrieNode()
+//         this.endSymbol="*"
+//         this.populateSuffixtrie(str)
+
+//     }
+
+//     populateSuffixtrie(str){
+//         for(let i=0;i<str.length;i++){
+//             this.insertSubsting(i,str)
+//         }
+//     }
+
+    // insertSubstring(index,str){
+    //     let node = this.root
+    //     for(let i=index;i<str.length;i++){
+    //         const letter =str.charAt(i)
+    //         if(!node.children.has(letter)){
+    //             node.children.set(letter,new TrieNode())
+    //         }
+    //         node = node.children.get(letter)
+            
+    //     }
+    //     node.children.set(this.endSymbol,null)
+    // }
+
+    // insertSubString(index,str){
+    //     let node =this.root
+    //     for(let i=index;i<str.length;i++){
+    //         let letter = str.charAt(i)
+    //         if(!node.children.has(letter)){
+    //             node.children.set(letter,new TrieNode())
+    //         }
+    //         node = node.children.get(letter)
+    //     }
+    //     node.children.set(this.endSymbol,null)
+    // }
+
+    // insertSubstring(index,str){
+    //     let node = this.root
+    //     for(let i=index ;i<str.length;i++){
+    //         let letter = str.chartAt(i)
+    //         if(!node.children.has(letter)){
+    //             node.children.set(letter,new TrieNode())
+    //         }
+    //         node = node.children.get(letter)
+    //     }
+    //     node.children.set(this.endSymbol,null)
+    // }
+    // insertSubsting(index,str){
+    //     let node = this.root
+    //     for(let i=index;i<str.length;i++){
+    //         let letter = str.charAt(i)
+    //         if(!node.children.has(letter)){
+    //             node.children.set(letter,new TrieNode())
+    //         }
+    //         node=node.children.get(letter)
+
+    //     }
+    //     node.children.set(this.endSymbol,null)
+    // }
+    // contains(str){
+    //     let node = this.root
+    //     for(let i=0;i<str.length;i++){
+    //         let letter = str.charAt(i)
+    //         if(!node.children.has(letter)){
+    //             return false
+    //         }
+    //         node=node.children.get(letter)
+    //     }
+    //     return node.children.has(this.endSymbol)
+    // } 
+// }
+
+// class TrieNode{
+//     constructor(){
+//         this.children=new Map()
+//     }
+// }
+
+// class Trie{
+//     constructor(str){
+//         this.root =new TrieNode()
+//         this.endSymbol ="*"
+//         this.populateSuffixTrie(str)
+//     }
+
+//     populateSuffixTrie(str){
+//         for(let i=0;i<str.length;i++){
+//             this.insertSubstring(i,str)
+//         }
+//     }
+
+//     insertSubstring(index,str){
+//         let node = this.root
+//         for(let i=index;i<str.length;i++){
+//             let letter =str.charAt(i)
+//             if(!node.children.has(letter)){
+//                 node.children.set(letter, new TrieNode())
+//             }
+//            node= node.children.get(letter)
+//         }
+//         node.children.set(this.endSymbol,null)
+//     }
+
+//     contains(str){
+//         let node =this.root
+//         for(let i=0;i<str.length;i++){
+//             let letter = str.charAt(i)
+//             if(!node.children.has(letter)){
+//                 return false
+//             }
+//             node = node.children.get(letter)
+//         }
+//        return node.children.has(this.endSymbol)
+//     }
+// }
+
+// const tr =new Trie("tree")
+// console.log(tr.contains("tre"));
+// console.log(tr.contains("tree"));
+
+
+//__________
+
+class Node{
+    constructor(data){
+        this.data=data
+        this.left=null
+        this.right =null
+    }
+}
+
+class BinerySearchTree{
+    constructor(){
+        this.root = null
+    }
+
+    insert (data){
+        const newNode = new Node(data)
+
+        let currentNode = this.root
+        if(!currentNode){
+            this.root = newNode
+        }else{
+            while(true){
+                if(data<currentNode.data){
+                    if(currentNode.left==null){
+                        currentNode.left =newNode
+                        return
+                    }else{
+                        currentNode=currentNode.left
+                    }
+                }else{
+                    if(currentNode.right==null){
+                        currentNode.right= newNode
+                        return
+                    }else{
+                        currentNode=currentNode.right
+                    }
+                }
+            }
+        }
+    }
+
+    inOrder(){
+        this.inOrderHelper(this.root)
+    }
+
+    inOrderHelper(node){
+        if(node){
+            this.inOrderHelper(node.left)
+            console.log(node.data);
+            this.inOrderHelper(node.right)
+        }
+    }
+}
+
+const bst= new BinerySearchTree
+bst.insert(10)
+bst.insert(30)
+bst.insert(11)
+bst.insert(12)
+
+bst.inOrder()
